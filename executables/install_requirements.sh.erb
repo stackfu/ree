@@ -1,0 +1,13 @@
+# 
+# install_requirements.sh
+# Fri Oct 22 14:59:27 -0200 2010
+#
+
+# TODO: Replace the contents of this file with "Install Requirements"
+echo Installing Requirements
+
+echo "=> build-essential"
+apt-get update
+apt-get -q -y install build-essential git-core subversion sqlite3 libsqlite3-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev libmysqlclient15-dev libpq-dev libmysqlclient-dev libreadline5-dev zlib1g-dev libssl-dev libopenssl-ruby1.8 
+echo "gem: --no-rdoc --no-ri
+" >> $HOME/.gemrc

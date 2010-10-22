@@ -1,0 +1,27 @@
+# 
+# install_ree.sh
+# Fri Oct 22 14:59:27 -0200 2010
+#
+
+# TODO: Replace the contents of this file with "Install Ree"
+echo Installing REE
+
+cd /tmp
+wget http://rubyforge.org/frs/download.php/71096/ruby-enterprise-1.8.7-2010.02.tar.gz
+tar vzxf ruby-enterprise-1.8.7-2010.02.tar.gz > /dev/null 2>&1
+cd ruby-enterprise-*
+./installer --auto=/opt/ruby-enterprise --no-dev-docs
+
+test -f /usr/bin/ruby && rm /usr/bin/ruby 
+test -f /usr/bin/gem  && rm /usr/bin/gem  
+test -f /usr/bin/rake && rm /usr/bin/rake 
+test -f /usr/bin/irb  && rm /usr/bin/irb
+
+ln -s /opt/ruby-enterprise/bin/ruby /usr/bin/ruby
+ln -s /opt/ruby-enterprise/bin/rake /usr/bin/rake
+ln -s /opt/ruby-enterprise/bin/gem /usr/bin/gem
+ln -s /opt/ruby-enterprise/bin/irb /usr/bin/irb
+
+export PATH=$PATH:/opt/ruby-enterprise/bin
+echo 'export PATH=$PATH:/opt/ruby-enterprise/bin' >> ~/.bashrc
+. ~/.bashrc

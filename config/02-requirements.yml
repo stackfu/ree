@@ -1,0 +1,26 @@
+#
+# Requirements are things you want to be checked before 
+# allowing this stack to be installed.
+#
+# This is an easy way to make sure all your components
+# dependencies are correctly installed.
+#
+# Types of dependencies:
+#
+#   FileExists    - a given file exists
+#   SymlinkExists - a given symlink exists
+#   DirExists     - a given directory exits
+#   ProcessExists - a process is runnning
+#   RubyCanLoad   - if ruby can load a given lib
+#   RubyGem       - if a given ruby gem is installed
+#
+# Example of expected contents for this file:
+#
+# requirements: 
+# - type: DirExists
+#   data: "/var"
+# - type: FileExists
+#   data: "/etc/init.d/mysql"
+#
+# TODO: uncomment the following line to get started
+# requirements:
